@@ -69,71 +69,6 @@ declare global {
     function zik(arg: any): any
     function zta(item: any): any
     function zor(...items: any[]): any
-    function chop(obj: zim.DisplayObject, cols?: number, rows?: number, tile?: boolean, margin?: number): zim.Tile | [zim.Bitmap]
-    function shuffle(array: [any]): [any]
-    function pluck(array: [any], remove?: boolean): any
-    function rand(a?: number, b?: number, integer?: boolean, negative?: boolean): number
-    function seedRandom(seed?: number | string): number | string
-    function odds(percent?: number): boolean
-    function rarity(weights: {}, shuffle?: boolean, zimColors?: boolean, dynamicPayload?: boolean): [any]
-    function repeats(array: [any], total?: boolean): number
-    function loop(obj: number | {} | [any], call: Function, reverse?: boolean, interval?: number, step?: number, start?: number, end?: number): any
-    function timeout(time: number | zim.zimVee, call: Function): { pause: Function, clear: Function, time: number, paused: boolean, done: boolean }
-    function interval(time: number | zim.zimVee, call: Function, total?: number, immediate?: boolean): { pause: Function, clear: Function, time: number, count: number, total: number, paused: boolean, pauseTimeLeft: number }
-    function copy<T>(obj: T, clone?: boolean): T
-    function arraysEqual(a: [any], b: [any], strict?: boolean): boolean
-    function arrayMinMax(arr: [any]): {}
-    function isEmpty(obj: {}): boolean
-    function isJSON(str: string): boolean
-    function isPick(obj: any): boolean
-    function merge(object1: {}, object2: {}, ...objects: {}[]): {}
-    function decimals(num: number, places?: number, addZeros?: number, addZerosBefore?: number, includeZero?: boolean, time?: boolean): number | string
-    function countDecimals(num: number): number
-    function sign(num: number): 1 | 0 | -1
-    function constrain(num: number, min?: number, max?: number, negative?: boolean): number
-    function dist(x1: number, y1: number, x2?: number, y2?: number): number
-    function rectIntersect(a: {} | zim.Boundary, b: {} | zim.Boundary, margin?: number): {}
-    function boundsAroundPoints(points: [{}]): number
-    function angle(x1: number, y1: number, x2: number, y2: number): number
-    function asset(file: string): zim.DisplayObject
-    function swapProperties(property: string, objA: any, objB: any): boolean
-    function swapHTML(idA: string, idB: string): boolean
-    // scrollX and scrollY are available only in zim namespace due to global conflict
-    function windowWidth(): number
-    function windowHeight(): number
-    function getQueryString(string?: string): {}
-    function urlEncode(string: string): string
-    function urlDecode(string: string): string
-    function setCookie(name: string, value: string, days?: number): boolean
-    function getCookie(name: string): string
-    function deleteCookie(name: string): boolean
-    function convertColor(color: zim.color, toColorType?: string, alpha?: number): string
-    function colorRange(color1: string, color2?: string, ratio?: number): void
-    function lighten(color: string, ratio?: number): void
-    function darken(color: string, ratio?: number): void
-    function toColor(color: string, targetColor: string, ratio?: number): void
-    function toAlpha(color: string, ratio?: number): void
-    function toBW(hex: string): string
-    function invertColor(hex: string): string
-    function pointAlongCurve(points: [any], ratio?: number, getAngle?: boolean): {}
-    function distanceAlongCurve(points: [any]): number
-    function closestPointAlongCurve(point: any, segmentPoints: [any], num?: number, interpolate?: boolean, percentage?: boolean): number
-    function transformPoints(points: [any], transformType: string, amount: number, x?: number, y?: number): [any]
-    function trimEndPoints(points: [any]): [any]
-    function reversePoints(points: [any]): [any]
-    function appendPoints(original: [any], points: [any], controlType?: string): [any]
-    function prependPoints(original: [any], points: [any], controlType?: string): [any]
-    function splitPoints(points: [any], index?: number, trimEnds?: boolean): [any]
-    function mobile(orientation?: boolean): string | boolean
-    function vee(obj?: any): boolean
-    function async(url: string, callback?: Function): void
-    function couple(json: string): void
-    function decouple(json: string): void
-    function asset(file: string, width?: number, height?: number): zim.DisplayObject
-    function object(name: string): zim.DisplayObject
-    // not sure how to type any class... is it Function?
-    function extend(subclass: Function, superclass: Function, override?: string | string[], prefix?: string, prototype?: boolean): Function
-
 
 
     var TAU: number
@@ -427,7 +362,7 @@ declare namespace zim {
 
 
     // UNIQUE - namespace only exports - not added by parser
-    export function makeGlobals(exceptions?: string[]): void
+
     // scrollX and scrollY conflict with JavaScript names
     export function scrollX(num?: number, time?: number): number // use scrollX
     export function scrollY(num?: number, time?: number): number // use scrollY
