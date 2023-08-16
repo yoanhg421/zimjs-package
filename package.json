@@ -1,6 +1,6 @@
 {
   "name": "zimjs-package",
-  "private": true,
+  "private": false,
   "version": "0.0.0",
   "type": "module",
   "main": "./dist/zim.js",
@@ -8,7 +8,7 @@
   "scripts": {
     "dev": "tsup --watch",
     "build": "tsup",
-    "web": "esbuild src/zim.js  --minify  --target=chrome58,firefox57,safari11,edge16 --outfile=cdn/zim.js"
+    "web": "esbuild src/zim.js  --minify --bundle  --target=chrome58,firefox57,safari11,edge16 --outfile=cdn/zim.js"
   },
   "devDependencies": {
     "esbuild": "0.19.2",
