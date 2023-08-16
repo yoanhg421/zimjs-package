@@ -2,7 +2,7 @@ import { defineConfig } from "tsup"
 
 export default defineConfig({
   entry: ["src/zim.js"],
-  splitting: true,
+  target: 'es2020',
   sourcemap: false,
   clean: true,
   format: ["cjs", "esm"],

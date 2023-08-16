@@ -104058,19 +104058,6 @@ https://codepen.io/zimjs/pen/ZqNYxX
 
 // if (!zns) zimplify()
 
-// A. if this actually makes globals then I think this would be good.
-// We import zim as the default.
-// Then to get the rest of ZIM into globals we run zimplify() from the outside
-for (var i = 0; i < globals.length; i++) {
-  WW[globals[i]] = zim[globals[i]] = funcs[i]
-}
-
-// B. If the above does not actually make globals
-// then this option lets them do it with an imported function then run from the outside.
-zim.makeGlobals = function (exceptions) {
-  zimplify(exceptions)
-}
-
 const globals = [
   "zog",
   "zid",
@@ -104121,6 +104108,19 @@ const funcs = [
   zimplify,
   zimify,
 ]
+
+// A. if this actually makes globals then I think this would be good.
+// We import zim as the default.
+// Then to get the rest of ZIM into globals we run zimplify() from the outside
+for (var i = 0; i < globals.length; i++) {
+  WW[globals[i]] = zim[globals[i]] = funcs[i]
+}
+
+// B. If the above does not actually make globals
+// then this option lets them do it with an imported function then run from the outside.
+zim.makeGlobals = function (exceptions) {
+  zimplify(exceptions)
+}
 
 export let makeGlobals = zim.makeGlobals
 

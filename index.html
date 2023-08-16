@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite + TS</title>
+  </head>
+  <body>
+    <div id="app"></div>
+    <script type="module" >
+      import './cdn/zim.js'
+
+
+      new zim.Frame(zim.FIT, 1024, 768, zim.light, zim.dark, ready);
+      function ready() {
+          
+          // given F (Frame), S (Stage), W (width), H (height)
+          // put code here
+          
+          new zim.Circle(100, zim.blue)
+              .center()
+              .drag();
+              
+      }
+    </script>
+  </body>
+</html>
